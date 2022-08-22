@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Update apt repo and cache on all Debian/Ubuntu boxes
+      apt: name=apt-transport-https state=present
+
+    - name: Install vim
+      apt: name=vim state=present
+    - name: Install zip
+      apt: name=zip state=present
